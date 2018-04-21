@@ -98,7 +98,7 @@ OpenSpending.DailyBread = function (elem) {
           return _.indexOf(skip, child.name);
         }),
         function(child) {
-          var daily = (child.amount / node.amount);
+          var daily = (child['amount.sum'] / node['amount.sum']);
           if (absolute) daily = daily / 365.0;
           return [child.name, child.label, daily, handleChildren(child, false)];
         });
@@ -143,7 +143,7 @@ OpenSpending.DailyBread = function (elem) {
       var tpl = "<div class='db-area-row'>" +
                 "<% _.each(areas, function(area, idx) { %>" +
                 "  <div class='db-area-col db-area-title' style='width: <%= width %>%;' data-db-area='<%= idx %>'>" +
-                "    <h3><%= area[1] %></h3>" +
+                "    <h3><%= area[3][0][1] %></h3>" +
                 "  </div>" +
                 "<% }); %>" +
                 "</div>" +
@@ -273,4 +273,3 @@ OpenSpending.renderDependentTypes = function(db) {
 }
 
 })(jQuery)
-

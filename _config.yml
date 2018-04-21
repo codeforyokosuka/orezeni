@@ -7,3 +7,5 @@ pygments: true
 auto: true
 title: 税金はどこへ行った？
 
+exclude:
+  - vendor

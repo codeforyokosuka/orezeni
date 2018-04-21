@@ -10,7 +10,7 @@ var OpenSpending = OpenSpending || {};
     breakdown: 'region',
     rootNodeLabel: 'Total',
     localApiCache: 'aggregate.json',
-    measure: 'amount',
+    measure: 'amount.sum',
     processEntry: function(e) { return e; },
     callback: function (tree) {}
   };
@@ -43,7 +43,7 @@ var OpenSpending = OpenSpending || {};
       self.config.processEntry = defaultConfig.processEntry;
     }
     if (!self.config.measure) {
-      self.config.measure = 'amount';
+      self.config.measure = 'amount.sum';
     }
 
     self.queryData = function () {
@@ -72,7 +72,7 @@ var OpenSpending = OpenSpending || {};
           return config.localApiCache;
         }
         apiUrl = config.apiUrl || config.siteUrl + '/api';
-        return apiUrl + '/2/aggregate';
+        return apiUrl + '/3/cubes/' + config.dataset + '/aggregate';
     };
 
       /**
@@ -138,7 +138,8 @@ var OpenSpending = OpenSpending || {};
        * the 'label' (default: 'Total')
        **/
       self.buildTree = function (data) {
-        var entries = data.drilldown,
+        //var entries = data.drilldown,
+        var entries = data.cells,
           config = self.config,
           drilldowns = config.drilldowns,
           breakdown = config.breakdown,
@@ -150,7 +151,8 @@ var OpenSpending = OpenSpending || {};
             id: 'root',
             label: 'Total',
             color: '#555',
-            currency: data.summary.currency[self.config.measure],
+            //currency: data.summary.currency[self.config.measure],
+            currency: 'JPY',
             children: [],
             level: 0,
             breakdowns: {}
