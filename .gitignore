@@ -12,4 +12,4 @@ build/node_modules/*
 _site/*
 .bundle
 vendor
-
+build
