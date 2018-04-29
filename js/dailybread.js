@@ -179,7 +179,7 @@ OpenSpending.DailyBread = function (elem) {
       areaId = self.areas[i]
       if (data[areaId]) {
         tax = tax * data[areaId][2]
-        data = data[areaId][3]
+        data = data[areaId][3][0][3]
       } else {
         return null
       }
