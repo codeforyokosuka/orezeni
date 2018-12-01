@@ -2,7 +2,7 @@ var OpenSpending = OpenSpending || {};
 
 (function ($) {
   var defaultConfig = {
-    //siteUrl: 'http://openspending.org',
+    //siteUrl: 'https://openspending.org',
     siteUrl: location.protocol + location.host,
     dataset: 'cra',
     drilldowns: ['cofog1', 'cofog2'],
@@ -82,7 +82,7 @@ var OpenSpending = OpenSpending || {};
        * @public getTree
        *
        * @param {string} api_url The url to the api,
-       * e.g. 'http://openspending.org/api'
+       * e.g. 'https://openspending.org/api'
        * @param {string} dataset The name of the dataset, e.g. 'cra'
        * @param {array} drilldowns the dimensions to drill down to, e.g.
        * ['cofog1', 'cofog2', 'cofog3']

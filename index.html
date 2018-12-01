@@ -8,8 +8,8 @@ title: The Daily Bread
 yepnope({
   load: [
     // 'http://wheredoesmymoneygo.org/wp-content/themes/wdmmg/wdmmg.css',
-    'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/ui-lightness/jquery-ui.css',
-    'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js',
+    'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/ui-lightness/jquery-ui.css',
+    'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js',
     '/js/libs/base64.js',
     '/js/libs/underscore.js',
     '/js/libs/raphael-min.js',
@@ -28,7 +28,7 @@ yepnope({
 
        var db = new OpenSpending.DailyBread($('#dailybread'));
        new OpenSpending.Aggregator({
-           apiUrl: 'http://openspending.org/api',
+           apiUrl: 'https://openspending.org/api',
            //localApiCache: 'aggregate.json',
            dataset: OpenSpending.identifier,
            drilldowns: ['unknown_category_id.category_id','unknown_category_id.Category', 'unknown_subcategory_id.subcategory_id', 'unknown_subcategory_id.Subcategory'],
